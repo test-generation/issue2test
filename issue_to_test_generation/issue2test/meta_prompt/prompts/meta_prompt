@@ -1,0 +1,72 @@
+Task: Executable Unit Test Generation Guidelines for {project_name} Project ({version})
+
+We have an issue reported in our project ({project_name}, version {version}). Below is the issue description:
+
+### Issue Description ###
+{problem_statement}
+
+## Your Task
+Generate a **structured guideline** for writing an **independent, executable unit test** for **{project_name} ({version})** based on the given problem statement.
+
+### Guideline Requirements
+- **Follow {project_name} {version}**'s best practices for unit test structure.
+- **Ensure the test is independently runnable** without requiring external dependencies or configurations.
+- **Avoid assumptions** beyond the provided information—focus on general structure.
+- **Keep it short and to the point** (**must be ≤70 words**).
+- **Do NOT generate actual test logic, function implementations, or assertions.**
+- **Do NOT include any code snippets.**
+- **Only describe** how the test should be structured within {project_name}'s testing framework.
+
+### Expected Output (Markdown Format)
+The output should be a **concise, well-structured Markdown document** (≤70 words) that clearly explains how to set up and structure an independent unit test for **{project_name} ({version})**, without any actual test code.
+
+---
+### **Example Output (Markdown Format)**
+# Guidelines for Writing a Standalone Django Test File
+A Django test file should run independently, configure settings dynamically, and use an in-memory database for isolation.
+
+### Setup Django & Database
+```python
+from django.conf import settings
+import django
+
+if not settings.configured:
+    settings.configure(
+        INSTALLED_APPS=[
+            'django.contrib.sites',
+            'django.contrib.contenttypes',
+            'django.contrib.auth',
+            'test_feed_app'
+        ],
+        DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': ':memory:'}},
+        SITE_ID=1,
+        USE_TZ=True
+    )
+
+django.setup()
+
+from django.core.management import call_command
+call_command('migrate', verbosity=0)
+```
+
+### Ensure Test Site Exists
+```python
+from django.contrib.sites.models import Site
+Site.objects.update_or_create(id=1, defaults={'domain': 'example.com', 'name': 'example.com'})
+```
+
+### Mock Request & Site
+```python
+class MockRequest:
+    path = "/test/"
+
+class MockSite:
+    domain = "example.com"
+```
+
+### Run Migrations (If Needed)
+In the test setup:
+```
+call_command('makemigrations', 'test_feed_app', verbosity=0)
+call_command('migrate', verbosity=0)
+```

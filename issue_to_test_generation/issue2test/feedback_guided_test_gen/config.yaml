@@ -1,0 +1,94 @@
+# config.yaml - Centralized Configuration File
+
+default: "dev-config"  # Used if no match is found
+
+configs:
+  local-instance-1:
+    SWE_BENCH_DOCKER_DIR: "/Volumes/nashid-g40/ubc-works/repos/instance-1/swe-bench-docker"
+    ISSUE_TO_TEST: "/Volumes/nashid-g40/ubc-works/repos/instance-1/issue-to-test/issue_to_test_generation/issue2test"
+    MAIN_SCRIPT: "feedback_guided_test_gen/main.py"
+    WORKSPACE_DIR: "/Volumes/nashid-g40/ubc-works/repos/instance-1/experiments/issue_to_test_generation/workspace"
+    INSTANCE_FILE: "/Volumes/nashid-g40/ubc-works/repos/instance-1/issue-to-test/issue_to_test_generation/swt_lite_instances-with-patch-info.json"
+    RESULTS_FOLDER: "/Volumes/nashid-g40/ubc-works/repos/instance-1/results-swt-lite"
+    USE_META_PROMPTING: true
+    USE_HYPOTHESIS: true
+    HYPOTHESIS_INDEX: 0
+    MODEL: "gpt-4o-mini"
+    MAX_ITERATIONS: 3
+
+  aws-instance-1:
+    SWE_BENCH_DOCKER_DIR: "/Volumes/nashid-g40/ubc-works/repos/instance-1/swe-bench-docker"
+    ISSUE_TO_TEST: "/Volumes/nashid-g40/ubc-works/repos/instance-1/issue-to-test/issue_to_test_generation/issue2test"
+    MAIN_SCRIPT: "feedback_guided_test_gen/main.py"
+    WORKSPACE_DIR: "/Volumes/nashid-g40/ubc-works/repos/instance-1/experiments/issue_to_test_generation/workspace"
+    INSTANCE_FILE: "/Volumes/nashid-g40/ubc-works/repos/instance-1/issue-to-test/issue_to_test_generation/swt_lite_instances-with-patch-info.json"
+    RESULTS_FOLDER: "/Volumes/nashid-g40/ubc-works/repos/instance-1/results-swt-lite"
+    USE_META_PROMPTING: true
+    USE_HYPOTHESIS: true
+    HYPOTHESIS_INDEX: 0
+    MODEL: "gpt-4o-mini"
+    MAX_ITERATIONS: 3
+
+  local-instance-2:
+    SWE_BENCH_DOCKER_DIR: "/Volumes/nashid-g40/ubc-works/repos/instance-2/swe-bench-docker"
+    ISSUE_TO_TEST: "/Volumes/nashid-g40/ubc-works/repos/instance-2/issue-to-test/issue_to_test_generation/issue2test"
+    MAIN_SCRIPT: "feedback_guided_test_gen/main.py"
+    WORKSPACE_DIR: "/Volumes/nashid-g40/ubc-works/repos/instance-2/experiments/issue_to_test_generation/workspace"
+    INSTANCE_FILE: "/Volumes/nashid-g40/ubc-works/repos/instance-2/issue-to-test/issue_to_test_generation/swt_lite_instances-with-patch-info.json"
+    RESULTS_FOLDER: "/Volumes/nashid-g40/ubc-works/repos/instance-2/results-swt-lite"
+    USE_META_PROMPTING: true
+    USE_HYPOTHESIS: true
+    HYPOTHESIS_INDEX: 1
+    MODEL: "gpt-4o-mini"
+    MAX_ITERATIONS: 3
+
+  local-instance-3:
+    SWE_BENCH_DOCKER_DIR: "/Volumes/nashid-g40/ubc-works/repos/instance-3/swe-bench-docker"
+    ISSUE_TO_TEST: "/Volumes/nashid-g40/ubc-works/repos/instance-3/issue-to-test/issue_to_test_generation/issue2test"
+    MAIN_SCRIPT: "/Volumes/nashid-g40/ubc-works/repos/instance-3/issue-to-test/issue_to_test_generation/issue2test/feedback_guided_test_gen/main.py"
+    WORKSPACE_DIR: "/Volumes/nashid-g40/ubc-works/repos/instance-3/experiments/issue_to_test_generation/workspace"
+    INSTANCE_FILE: "/Volumes/nashid-g40/ubc-works/repos/instance-3/issue-to-test/issue_to_test_generation/swt_lite_instances-with-patch-info.json"
+    RESULTS_FOLDER: "/Volumes/nashid-g40/ubc-works/repos/instance-3/results-swt-lite"
+    USE_META_PROMPTING: true
+    USE_HYPOTHESIS: true
+    HYPOTHESIS_INDEX: 2
+    MODEL: "gpt-4o-mini"
+    MAX_ITERATIONS: 3
+
+  local-instance-4:
+    SWE_BENCH_DOCKER_DIR: "/Volumes/nashid-g40/ubc-works/repos/instance-4/swe-bench-docker"
+    ISSUE_TO_TEST: "/Volumes/nashid-g40/ubc-works/repos/instance-4/issue-to-test/issue_to_test_generation/issue2test"
+    MAIN_SCRIPT: "feedback_guided_test_gen/main.py"
+    WORKSPACE_DIR: "/Volumes/nashid-g40/ubc-works/repos/instance-4/experiments/issue_to_test_generation/workspace"
+    INSTANCE_FILE: "/Volumes/nashid-g40/ubc-works/repos/instance-4/issue-to-test/issue_to_test_generation/swt_lite_instances-with-patch-info.json"
+    RESULTS_FOLDER: "/Volumes/nashid-g40/ubc-works/repos/instance-4/results-swt-lite"
+    USE_META_PROMPTING: true
+    USE_HYPOTHESIS: false
+    HYPOTHESIS_INDEX: 0
+    MODEL: "gpt-4o-mini"
+    MAX_ITERATIONS: 3
+
+  vm-1:
+    SWE_BENCH_DOCKER_DIR: "/mnt/data/swe-bench-vm1"
+    WORKSPACE_DIR: "/mnt/data/workspace-vm1"
+    USE_META_PROMPTING: true
+
+  vm-2:
+    SWE_BENCH_DOCKER_DIR: "/mnt/data/swe-bench-vm2"
+    WORKSPACE_DIR: "/mnt/data/workspace-vm2"
+    USE_META_PROMPTING: true
+
+  dev-config:
+    SWE_BENCH_DOCKER_DIR: "/Users/nashid/repos/swe-bench-docker"
+    ISSUE_TO_TEST: "/Users/nashid/repos/issue-to-test/issue_to_test_generation/issue2test"
+    MAIN_SCRIPT: "feedback_guided_test_gen/main.py"
+    WORKSPACE_DIR: "/Users/nashid/repos/issue-to-test/issue_to_test_generation/workspace"
+    INSTANCE_FILE: "/Users/nashid/repos/issue-to-test/issue_to_test_generation/swt_lite_instances-with-patch-info.json"
+    RESULTS_FOLDER: "/Users/nashid/repos/results-swt-lite"
+    USE_META_PROMPTING: true
+    USE_HYPOTHESIS: true
+    HYPOTHESIS_INDEX: 0
+    MODEL: "gpt-4o-mini"
+    MAX_ITERATIONS: 3
+
+

@@ -1,0 +1,40 @@
+[error_tdd_relevance_categorization_prompt]
+system = "You are an expert in categorizing software errors in a Test-Driven Development (TDD) context."
+
+user = """
+Based on the test result below, categorize the error as either 'compilation', 'runtime', or 'assertion' based on the following definitions:
+
+- **Compilation Error**: An error that prevents the code from compiling or building. These errors occur before the code can be executed.
+- **Runtime Error**: An error that occurs during code execution but is unrelated to test assertions. Examples include type errors, missing imports, or attribute errors.
+- **Assertion Error**: A failure due to unmet test assertions or conditions within the test itself, typically because the expected functionality is not yet implemented.
+
+**Note**: This is a unit test. The repair steps should address how to fix the test code only, without modifying other files.
+
+Additionally, indicate if this error is **expected to be resolved once the functionality described in the GitHub issue is implemented**. This assessment will help determine if the error is directly related to the TDD process and the unimplemented feature, or if it requires an immediate fix because it is unrelated to the GitHub issue.
+Then identify the root cause of the error and provide a numbered list of repair steps in a single string.
+
+### GitHub Issue Summary:
+{{ github_issue_summary }}
+
+### Test File
+=========
+{{ test_file }}
+=========
+
+### Test Result:
+{{ result_content }}
+
+## Response
+- Set `issue_error_relevance` to **true** if the error will be resolved once the GitHub issue functionality is implemented.
+- Set `issue_error_relevance` to **false** if the error is unrelated to the missing functionality and requires fixing regardless of TDD.
+
+Respond in JSON format as follows:
+
+{
+  "error_type": "<compilation, runtime, or assertion>",
+  "reason": "<brief reason for categorization>",
+  "root_cause": "<detailed explanation of the root cause>",
+  "repair_steps": "<numbered steps in a single string>"
+  "issue_error_relevance": <true or false>  // true if this error is expected to be fixed by implementing the GitHub issue functionality, false if unrelated
+}
+"""

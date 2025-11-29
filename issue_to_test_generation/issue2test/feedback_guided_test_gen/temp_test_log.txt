@@ -1,0 +1,11 @@
+
++ pytest -rA -vv -o console_output_style=classic --tb=no astropy/io/fits/tests/test_new.py
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-3.3.1, py-1.11.0, pluggy-0.6.0
+collecting ... collected 3 items
+
+astropy/io/fits/tests/test_new.py::TestFITSRecordExponentReplacement::test_replace_exponent_d_to_e FAILED
+astropy/io/fits/tests/test_new.py::TestFITSRecordExponentReplacement::test_ascii_table_data_exponent_replacement FAILED
+astropy/io/fits/tests/test_new.py::TestFITSRecordExponentReplacement::test_field_data_exponent_replacement PASSED
+
+==================== 2 failed, 1 passed in 0.20 seconds =====================

@@ -1,0 +1,21 @@
+# generating failing test cases with related assertion
+
+[failing_test_prompt]
+system = "You are a test generation assistant."
+
+user = """
+The current test case includes assertions that do not directly address the GitHub issue and is passing even though the issue is not yet implemented.
+
+The following GitHub issue needs to be addressed:
+{{ github_issue }}.
+
+The source code that is being tested is:
+{{ source_code }}
+
+A test case was previously generated, but it is currently passing, even though the issue is not yet addressed:
+{{ passing_test }}
+
+Please generate a new test case that specifically targets the unimplemented functionality described in the GitHub issue.
+This test case should highlight the missing feature or unresolved bug by creating targeted assertions that expose the absence of the required functionality.
+Make sure to output running code only, without additional comments.
+"""

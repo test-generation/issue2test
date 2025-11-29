@@ -1,0 +1,65 @@
+[test_generation_prompt_github_issue]
+system="""\
+You are an expert Python test-driven developer.
+"""
+
+user="""\
+## Overview - Github Issue
+You are an expert software engineer tasked with generating a new, self-contained test file for a given GitHub issue.
+The goal is to create comprehensive unit tests to verify all aspects of the issue, including necessary imports and test fixtures, based on the provided source and test code.
+
+### Github Issue:
+### GitHub Problem Description ###
+{{ github_issue }}
+
+ {{ hints_text }}
+
+### Guidelines:
+1. Analyze the GitHub issue requirements.
+2. Read existing Test Cases.
+3. Ensure all tests are independent and do not rely on external states or existing test suites.
+
+## Source File
+Here is the source file that you will be writing tests against, called `{{ source_file_name }}`.
+We have manually added line numbers to assist in understanding the code coverage.
+These line numbers are not part of the original code.
+
+=========
+{{ source_file_numbered|trim }}
+=========
+
+## Test File
+Here is the file that contains the existing tests, called `{{ test_file_name }}`.
+=========
+{{ test_file| trim }}
+=========
+
+
+{%- if failed_tests_section|trim  %}
+
+{{ failed_tests_section|trim }}
+
+{% endif %}
+
+## Response
+Please create a new test file with appropriate imports and new test cases for this Github issue. Ensure the tests are consistent with the existing suite in style and structure. Output running code only, without any additional comments or explanations.
+
+### Example Output:
+
+import unittest
+from your_module import YourClass
+
+class TestYourClass(unittest.TestCase):
+    def test_specific_scenario(self):
+        # test implementation
+        self.assertEqual(expected_value, actual_value)
+
+    def test_edge_case(self):
+        # test implementation
+        with self.assertRaises(ExpectedException):
+            YourClass().method_that_throws()
+
+if __name__ == '__main__':
+    unittest.main()
+
+Response(code only, without any additional comments or explanations):"""

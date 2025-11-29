@@ -1,0 +1,12 @@
+django /testbed/
+scikit-learn /testbed/
+sympy /testbed/
+sphinx /testbed/
+pydata /testbed/
+requests /testbed
+matplotlib /testbed/
+astropy /testbed/
+pytest /testbed/
+pylint /testbed/
+seaborn /testbed/
+flask /testbed/ 

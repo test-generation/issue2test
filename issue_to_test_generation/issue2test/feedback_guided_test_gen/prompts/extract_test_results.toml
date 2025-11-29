@@ -1,0 +1,92 @@
+[extract_test_results]
+
+system = """
+You are an AI assistant that extracts structured test results from raw test execution logs.
+Your task is to parse the log and return test names and their outcomes in **JSON format**.
+The output **must exactly match** the format used by an existing system, ensuring no code breaks.
+
+Follow these strict rules:
+- **Output must always be valid JSON** with no extra explanations.
+- **"tests" must be a list of dictionaries**, each with "name" and "outcome".
+- **"outcome" must always be one of**: "PASSED", "FAILED", "SKIPPED", or "ERROR".
+- **"test_file" should be null if missing**.
+- **Always include "summary"**, even if no tests are found.
+- **Add `"has_failures"` to indicate failure/success.**
+  - `"has_failures": true` if any test is `"FAILED"` or `"ERROR"`, otherwise `false`.
+
+
+Now, extract test results from the following test output.
+"""
+
+user = """
+# Examples for Consistent JSON Output:
+Example 1: All Tests Passed
+Input Log:
+
+```
++ ./tests/runtests.py --verbosity 2 --settings=test_sqlite --parallel 1 tests.migrations.test_new
+test_enum_serializer_uses_name_not_value (tests.migrations.test_new.TestEnumSerializer) ... ok
+test_database_connection (tests.migrations.test_new.TestDBConnection) ... ok
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK
+Testing against Django installed in '/testbed/django'
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+```
+
+Correct JSON Output:
+```
+{
+  "test_file": "tests/migrations/test_new.py",
+  "tests": [
+    {"name": "test_enum_serializer_uses_name_not_value", "outcome": "PASSED"},
+    {"name": "test_database_connection", "outcome": "PASSED"}
+  ],
+  "summary": "Ran 2 tests, 2 passed.",
+  "has_failures": false
+}
+```
+
+Example 2: Test Failing with an Error
+```
++ ./tests/runtests.py --verbosity 2 --settings=test_sqlite --parallel 1 tests.migrations.test_new
+Testing against Django installed in '/testbed/django'
+Traceback (most recent call last):
+  File "./tests/runtests.py", line 566, in <module>
+    options.start_at, options.start_after, options.pdb,
+  File "./tests/runtests.py", line 308, in django_tests
+    extra_tests=extra_tests,
+  File "/testbed/django/test/runner.py", line 682, in run_tests
+    suite = self.build_suite(test_labels, extra_tests)
+  File "/testbed/django/test/runner.py", line 540, in build_suite
+    tests = self.test_loader.loadTestsFromName(label)
+RuntimeError: Model class tests.migrations.test_new.Item doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+```
+
+Correct JSON Output:
+```
+{
+  "test_file": "tests/migrations/test_new.py",
+  "tests": [
+    {"name": "test_enum_serializer_uses_name_not_value", "outcome": "ERROR"}
+  ],
+  "summary": "Ran 1 test, 1 errored.",
+  "has_failures": true
+}
+```
+
+# Strict Output Rules:
+
+- Ensure "tests" is always a list (never null or missing).
+- Only use "PASSED", "FAILED", "SKIPPED", "ERROR" as valid outcomes.
+- Always include "summary", even if no tests were found.
+- Extract "test_file" from log output, or return null if unavailable.
+- **`"has_failures"` must be added (true if any test FAILED/ERROR, else false).**
+
+Now parse the following test output and return the JSON output.
+```
+{{ test_output }}
+```
+"""

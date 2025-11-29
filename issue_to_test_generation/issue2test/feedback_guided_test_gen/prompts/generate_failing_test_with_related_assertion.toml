@@ -1,0 +1,19 @@
+# generating failing test cases with related assertion
+
+[generated_related_assertion_test_test_prompt]
+system = "You are a test generation assistant."
+
+user = """
+The following GitHub issue needs to be addressed:
+{{ github_issue }}.
+
+The source code that is being tested is:
+{{ source_code }}
+
+A test case was previously generated, but it fails with an unrelated assertion error:
+{{ unrelated_assertion_test }}
+
+Please generate a new test case that directly addresses the issue described in the GitHub issue and ensure that it fails because of that specific issue.
+The test case should highlight the issue in the GitHub issue and make sure it fails.
+Make sure your response contains only the corrected code, without additional comments.
+"""

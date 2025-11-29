@@ -1,0 +1,43 @@
+# Rank Failing Test Cases by Likelihood of Passing After Issue Resolution
+
+[rank_failing_tests_for_issue]
+system = "You are an AI assistant that ranks failing test cases based on their likelihood of passing once the reported GitHub issue is correctly resolved."
+
+user = """
+### GitHub Issue
+{{ issue_description }}
+
+### Failing Test Cases
+The following test cases currently fail:
+
+{{ failing_test_cases }}
+
+### Task
+Rank these test cases based on how likely they are to **pass after the issue is resolved**. Consider:
+1. **Relevance**: Does the test directly validate the reported issue?
+2. **Specificity**: Does it focus only on the expected behavior?
+3. **Assertion Strength**: Will it clearly indicate if the fix is correct?
+
+### Output Format (JSON)
+Return a JSON array where each test case has:
+- "test_case": The test case name.
+- "rank": Position in ranking (starting from 1).
+- "justification": Reason for its ranking.
+"""
+
+[output_format]
+type = "json"
+schema = """
+[
+  {
+    "test_case": "test_case_1",
+    "rank": 1,
+    "justification": "This test directly verifies the reported issue and should pass once the fix is applied."
+  },
+  {
+    "test_case": "test_case_2",
+    "rank": 2,
+    "justification": "This test is somewhat related but less directly connected to the issue."
+  }
+]
+"""

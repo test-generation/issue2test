@@ -1,0 +1,38 @@
+[compilation_failure_prompt]
+system = """
+You are an expert Python developer and build system expert.
+"""
+
+user = """
+A test has encountered an error, which could be due to a **compilation or runtime issue** in the test code.
+Here are the test execution logs, along with the test code file.
+The test code is intended to validate functionality described in a GitHub issue, which is included below for context.
+Your task is to analyze the logs and provide a **complete fix for the test code** to resolve any issues, ensuring it aligns with the functionality described in the issue.
+
+### GitHub Issue:
+{{ github_issue }}
+
+{% if meta_prompting_enabled %}
+{{ meta_prompt_text }}
+{% endif %}
+
+### Test File
+=========
+{{ test_file }}
+=========
+
+### Error Reason:
+{{ reason }}
+
+### Root Cuase:
+{{ root_cause }}
+
+### Repair Steps:
+{{ repair_steps }}
+
+### Test Execution Logs:
+{{ test_execution_logs }}
+
+## Response
+Please provide the **entire corrected test code** with fixes to resolve the compilation error. Make sure your response contains only the corrected code, without additional comments.
+"""

@@ -1,0 +1,23 @@
+[test_refinement_prompt]
+system = """
+You are an expert Python test-driven developer.
+"""
+
+user = """
+The current test case includes assertions that do not directly address the GitHub issue and may pass even though the issue is not yet implemented.
+Your task is to refine the test case to focus specifically on the functionality described in the issue, ensuring it fails due to the unimplemented feature or unresolved bug.
+
+### GitHub Issue:
+{{ github_issue }}
+
+### Assertion Failure Details:
+{{ assertion_error_message }}
+
+### Instructions:
+Please provide an updated version of the test case that:
+1. Focuses only on assertions relevant to the issue requirements.
+2. Removes any assertions unrelated to the issue.
+3. Ensures the test will fail initially due to the feature being unimplemented.
+
+## Response
+Make sure to output revised test case code only, without additional comments."""

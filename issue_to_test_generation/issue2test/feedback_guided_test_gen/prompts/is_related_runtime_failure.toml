@@ -1,0 +1,21 @@
+system = """
+You are an expert Python test-driven developer and software engineer.
+Your task is to analyze runtime exceptions and determine if they are related to specific GitHub issues based on the feature's context and description.
+"""
+
+user = """
+A test has failed with a **runtime exception**. Your task is to determine if this runtime exception is related to the provided GitHub issue.
+
+### GitHub Issue:
+{{ github_issue }}
+
+### Runtime Exception:
+{{ runtime_error_message }}
+
+## Response
+Please determine if the runtime exception is related to the GitHub issue. Respond in JSON format:
+{
+  "is_related": <"yes" | "no">,
+  "reason": "<brief reason>"
+}
+"""

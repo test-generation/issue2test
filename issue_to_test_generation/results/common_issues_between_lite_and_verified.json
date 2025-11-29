@@ -1,0 +1,467 @@
+[
+    {
+        "instance_id": "sympy__sympy-12419",
+        "patch_file": "sympy/matrices/expressions/matexpr.py",
+        "test_file": "sympy/matrices/expressions/tests/test_matexpr.py"
+    },
+    {
+        "instance_id": "sympy__sympy-12481",
+        "patch_file": "sympy/combinatorics/permutations.py",
+        "test_file": "sympy/combinatorics/tests/test_permutations.py"
+    },
+    {
+        "instance_id": "sympy__sympy-13031",
+        "patch_file": "sympy/matrices/sparse.py",
+        "test_file": "sympy/matrices/tests/test_sparse.py"
+    },
+    {
+        "instance_id": "sympy__sympy-13480",
+        "patch_file": "sympy/functions/elementary/hyperbolic.py",
+        "test_file": "sympy/functions/elementary/tests/test_hyperbolic.py"
+    },
+    {
+        "instance_id": "sympy__sympy-13647",
+        "patch_file": "sympy/matrices/common.py",
+        "test_file": "sympy/matrices/tests/test_commonmatrix.py"
+    },
+    {
+        "instance_id": "sympy__sympy-15345",
+        "patch_file": "sympy/printing/mathematica.py",
+        "test_file": "sympy/printing/tests/test_mathematica.py"
+    },
+    {
+        "instance_id": "sympy__sympy-16792",
+        "patch_file": "sympy/utilities/codegen.py",
+        "test_file": "sympy/utilities/tests/test_codegen.py"
+    },
+    {
+        "instance_id": "sympy__sympy-17139",
+        "patch_file": "sympy/simplify/fu.py",
+        "test_file": "sympy/simplify/tests/test_fu.py"
+    },
+    {
+        "instance_id": "sympy__sympy-17630",
+        "patch_file": "sympy/matrices/expressions/matexpr.py",
+        "test_file": "sympy/matrices/expressions/tests/test_blockmatrix.py"
+    },
+    {
+        "instance_id": "sympy__sympy-17655",
+        "patch_file": "sympy/geometry/point.py",
+        "test_file": "sympy/geometry/tests/test_point.py"
+    },
+    {
+        "instance_id": "sympy__sympy-18189",
+        "patch_file": "sympy/solvers/diophantine.py",
+        "test_file": "sympy/solvers/tests/test_diophantine.py"
+    },
+    {
+        "instance_id": "sympy__sympy-18199",
+        "patch_file": "sympy/ntheory/residue_ntheory.py",
+        "test_file": "sympy/ntheory/tests/test_residue.py"
+    },
+    {
+        "instance_id": "sympy__sympy-18698",
+        "patch_file": "sympy/polys/polytools.py",
+        "test_file": "sympy/polys/tests/test_polytools.py"
+    },
+    {
+        "instance_id": "sympy__sympy-20154",
+        "patch_file": "sympy/utilities/iterables.py",
+        "test_file": "sympy/utilities/tests/test_iterables.py"
+    },
+    {
+        "instance_id": "sympy__sympy-20590",
+        "patch_file": "sympy/core/_print_helpers.py",
+        "test_file": "sympy/core/tests/test_basic.py"
+    },
+    {
+        "instance_id": "sympy__sympy-21379",
+        "patch_file": "sympy/core/mod.py",
+        "test_file": "sympy/core/tests/test_arit.py"
+    },
+    {
+        "instance_id": "sympy__sympy-21612",
+        "patch_file": "sympy/printing/str.py",
+        "test_file": "sympy/printing/tests/test_str.py"
+    },
+    {
+        "instance_id": "sympy__sympy-21847",
+        "patch_file": "sympy/polys/monomials.py",
+        "test_file": "sympy/polys/tests/test_monomials.py"
+    },
+    {
+        "instance_id": "sympy__sympy-22714",
+        "patch_file": "sympy/geometry/point.py",
+        "test_file": "sympy/geometry/tests/test_point.py"
+    },
+    {
+        "instance_id": "sympy__sympy-23262",
+        "patch_file": "sympy/utilities/lambdify.py",
+        "test_file": "sympy/utilities/tests/test_lambdify.py"
+    },
+    {
+        "instance_id": "sympy__sympy-24066",
+        "patch_file": "sympy/physics/units/unitsystem.py",
+        "test_file": "sympy/physics/units/tests/test_quantities.py"
+    },
+    {
+        "instance_id": "sympy__sympy-24213",
+        "patch_file": "sympy/physics/units/unitsystem.py",
+        "test_file": "sympy/physics/units/tests/test_quantities.py"
+    },
+    {
+        "instance_id": "sphinx-doc__sphinx-11445",
+        "patch_file": "sphinx/util/rst.py",
+        "test_file": "tests/test_util_rst.py"
+    },
+    {
+        "instance_id": "sphinx-doc__sphinx-8595",
+        "patch_file": "sphinx/ext/autodoc/__init__.py",
+        "test_file": "tests/roots/test-ext-autodoc/target/empty_all.py"
+    },
+    {
+        "instance_id": "sphinx-doc__sphinx-8721",
+        "patch_file": "sphinx/ext/viewcode.py",
+        "test_file": "tests/test_ext_viewcode.py"
+    },
+    {
+        "instance_id": "scikit-learn__scikit-learn-10297",
+        "patch_file": "sklearn/linear_model/ridge.py",
+        "test_file": "sklearn/linear_model/tests/test_ridge.py"
+    },
+    {
+        "instance_id": "scikit-learn__scikit-learn-13142",
+        "patch_file": "sklearn/mixture/base.py",
+        "test_file": "sklearn/mixture/tests/test_bayesian_mixture.py"
+    },
+    {
+        "instance_id": "scikit-learn__scikit-learn-13439",
+        "patch_file": "sklearn/pipeline.py",
+        "test_file": "sklearn/tests/test_pipeline.py"
+    },
+    {
+        "instance_id": "scikit-learn__scikit-learn-13496",
+        "patch_file": "sklearn/ensemble/iforest.py",
+        "test_file": "sklearn/ensemble/tests/test_iforest.py"
+    },
+    {
+        "instance_id": "scikit-learn__scikit-learn-13779",
+        "patch_file": "sklearn/ensemble/voting.py",
+        "test_file": "sklearn/ensemble/tests/test_voting.py"
+    },
+    {
+        "instance_id": "scikit-learn__scikit-learn-14087",
+        "patch_file": "sklearn/linear_model/logistic.py",
+        "test_file": "sklearn/linear_model/tests/test_logistic.py"
+    },
+    {
+        "instance_id": "scikit-learn__scikit-learn-14894",
+        "patch_file": "sklearn/svm/base.py",
+        "test_file": "sklearn/svm/tests/test_svm.py"
+    },
+    {
+        "instance_id": "scikit-learn__scikit-learn-14983",
+        "patch_file": "sklearn/model_selection/_split.py",
+        "test_file": "sklearn/model_selection/tests/test_split.py"
+    },
+    {
+        "instance_id": "scikit-learn__scikit-learn-25747",
+        "patch_file": "sklearn/utils/_set_output.py",
+        "test_file": "sklearn/utils/tests/test_set_output.py"
+    },
+    {
+        "instance_id": "pytest-dev__pytest-7432",
+        "patch_file": "src/_pytest/skipping.py",
+        "test_file": "testing/test_skipping.py"
+    },
+    {
+        "instance_id": "pytest-dev__pytest-7490",
+        "patch_file": "src/_pytest/skipping.py",
+        "test_file": "testing/test_skipping.py"
+    },
+    {
+        "instance_id": "pylint-dev__pylint-7080",
+        "patch_file": "pylint/lint/expand_modules.py",
+        "test_file": "tests/test_self.py"
+    },
+    {
+        "instance_id": "pydata__xarray-4094",
+        "patch_file": "xarray/core/dataarray.py",
+        "test_file": "xarray/tests/test_dataset.py"
+    },
+    {
+        "instance_id": "psf__requests-2317",
+        "patch_file": "requests/sessions.py",
+        "test_file": "test_requests.py"
+    },
+    {
+        "instance_id": "matplotlib__matplotlib-23299",
+        "patch_file": "lib/matplotlib/__init__.py",
+        "test_file": "lib/matplotlib/tests/test_rcparams.py"
+    },
+    {
+        "instance_id": "matplotlib__matplotlib-23314",
+        "patch_file": "lib/mpl_toolkits/mplot3d/axes3d.py",
+        "test_file": "lib/matplotlib/tests/test_axes.py"
+    },
+    {
+        "instance_id": "matplotlib__matplotlib-23476",
+        "patch_file": "lib/matplotlib/figure.py",
+        "test_file": "lib/matplotlib/tests/test_figure.py"
+    },
+    {
+        "instance_id": "matplotlib__matplotlib-24149",
+        "patch_file": "lib/matplotlib/axes/_axes.py",
+        "test_file": "lib/matplotlib/tests/test_axes.py"
+    },
+    {
+        "instance_id": "matplotlib__matplotlib-24970",
+        "patch_file": "lib/matplotlib/colors.py",
+        "test_file": "lib/matplotlib/tests/test_colors.py"
+    },
+    {
+        "instance_id": "matplotlib__matplotlib-25311",
+        "patch_file": "lib/matplotlib/offsetbox.py",
+        "test_file": "lib/matplotlib/tests/test_pickle.py"
+    },
+    {
+        "instance_id": "matplotlib__matplotlib-25332",
+        "patch_file": "lib/matplotlib/cbook.py",
+        "test_file": "lib/matplotlib/tests/test_pickle.py"
+    },
+    {
+        "instance_id": "django__django-10914",
+        "patch_file": "django/conf/global_settings.py",
+        "test_file": "tests/test_utils/tests.py"
+    },
+    {
+        "instance_id": "django__django-11099",
+        "patch_file": "django/contrib/auth/validators.py",
+        "test_file": "tests/auth_tests/test_validators.py"
+    },
+    {
+        "instance_id": "django__django-11133",
+        "patch_file": "django/http/response.py",
+        "test_file": "tests/httpwrappers/tests.py"
+    },
+    {
+        "instance_id": "django__django-11179",
+        "patch_file": "django/db/models/deletion.py",
+        "test_file": "tests/delete/tests.py"
+    },
+    {
+        "instance_id": "django__django-11815",
+        "patch_file": "django/db/migrations/serializer.py",
+        "test_file": "tests/migrations/test_writer.py"
+    },
+    {
+        "instance_id": "django__django-11848",
+        "patch_file": "django/utils/http.py",
+        "test_file": "tests/utils_tests/test_http.py"
+    },
+    {
+        "instance_id": "django__django-11964",
+        "patch_file": "django/db/models/enums.py",
+        "test_file": "tests/model_enums/tests.py"
+    },
+    {
+        "instance_id": "django__django-11999",
+        "patch_file": "django/db/models/fields/__init__.py",
+        "test_file": "tests/model_fields/tests.py"
+    },
+    {
+        "instance_id": "django__django-12125",
+        "patch_file": "django/db/migrations/serializer.py",
+        "test_file": "tests/migrations/test_writer.py"
+    },
+    {
+        "instance_id": "django__django-12308",
+        "patch_file": "django/contrib/admin/utils.py",
+        "test_file": "tests/admin_utils/tests.py"
+    },
+    {
+        "instance_id": "django__django-12708",
+        "patch_file": "django/db/backends/base/schema.py",
+        "test_file": "tests/migrations/test_base.py"
+    },
+    {
+        "instance_id": "django__django-13028",
+        "patch_file": "django/db/models/sql/query.py",
+        "test_file": "tests/queries/models.py"
+    },
+    {
+        "instance_id": "django__django-13033",
+        "patch_file": "django/db/models/sql/compiler.py",
+        "test_file": "tests/ordering/models.py"
+    },
+    {
+        "instance_id": "django__django-13158",
+        "patch_file": "django/db/models/sql/query.py",
+        "test_file": "tests/queries/test_qs_combinators.py"
+    },
+    {
+        "instance_id": "django__django-13315",
+        "patch_file": "django/forms/models.py",
+        "test_file": "tests/model_forms/models.py"
+    },
+    {
+        "instance_id": "django__django-13401",
+        "patch_file": "django/db/models/fields/__init__.py",
+        "test_file": "tests/model_fields/tests.py"
+    },
+    {
+        "instance_id": "django__django-13551",
+        "patch_file": "django/contrib/auth/tokens.py",
+        "test_file": "tests/auth_tests/models/__init__.py"
+    },
+    {
+        "instance_id": "django__django-13590",
+        "patch_file": "django/db/models/sql/query.py",
+        "test_file": "tests/expressions/tests.py"
+    },
+    {
+        "instance_id": "django__django-13658",
+        "patch_file": "django/core/management/__init__.py",
+        "test_file": "tests/admin_scripts/tests.py"
+    },
+    {
+        "instance_id": "django__django-13925",
+        "patch_file": "django/db/models/base.py",
+        "test_file": "tests/check_framework/test_model_checks.py"
+    },
+    {
+        "instance_id": "django__django-13933",
+        "patch_file": "django/forms/models.py",
+        "test_file": "tests/forms_tests/tests/test_error_messages.py"
+    },
+    {
+        "instance_id": "django__django-13964",
+        "patch_file": "django/db/models/base.py",
+        "test_file": "tests/many_to_one/models.py"
+    },
+    {
+        "instance_id": "django__django-14017",
+        "patch_file": "django/db/models/query_utils.py",
+        "test_file": "tests/expressions/tests.py"
+    },
+    {
+        "instance_id": "django__django-14155",
+        "patch_file": "django/urls/resolvers.py",
+        "test_file": "tests/urlpatterns_reverse/tests.py"
+    },
+    {
+        "instance_id": "django__django-14238",
+        "patch_file": "django/db/models/fields/__init__.py",
+        "test_file": "tests/model_fields/test_autofield.py"
+    },
+    {
+        "instance_id": "django__django-14534",
+        "patch_file": "django/forms/boundfield.py",
+        "test_file": "tests/forms_tests/tests/test_forms.py"
+    },
+    {
+        "instance_id": "django__django-14580",
+        "patch_file": "django/db/migrations/serializer.py",
+        "test_file": "tests/migrations/test_writer.py"
+    },
+    {
+        "instance_id": "django__django-14608",
+        "patch_file": "django/forms/formsets.py",
+        "test_file": "tests/admin_views/tests.py"
+    },
+    {
+        "instance_id": "django__django-14672",
+        "patch_file": "django/db/models/fields/reverse_related.py",
+        "test_file": "tests/invalid_models_tests/test_models.py"
+    },
+    {
+        "instance_id": "django__django-14752",
+        "patch_file": "django/contrib/admin/views/autocomplete.py",
+        "test_file": "tests/admin_views/test_autocomplete_view.py"
+    },
+    {
+        "instance_id": "django__django-14787",
+        "patch_file": "django/utils/decorators.py",
+        "test_file": "tests/decorators/tests.py"
+    },
+    {
+        "instance_id": "django__django-14855",
+        "patch_file": "django/contrib/admin/helpers.py",
+        "test_file": "tests/admin_views/admin.py"
+    },
+    {
+        "instance_id": "django__django-14915",
+        "patch_file": "django/forms/models.py",
+        "test_file": "tests/model_forms/test_modelchoicefield.py"
+    },
+    {
+        "instance_id": "django__django-14999",
+        "patch_file": "django/db/migrations/operations/models.py",
+        "test_file": "tests/migrations/test_operations.py"
+    },
+    {
+        "instance_id": "django__django-15252",
+        "patch_file": "django/db/migrations/executor.py",
+        "test_file": "tests/backends/base/test_creation.py"
+    },
+    {
+        "instance_id": "django__django-15695",
+        "patch_file": "django/db/migrations/operations/models.py",
+        "test_file": "tests/migrations/test_operations.py"
+    },
+    {
+        "instance_id": "django__django-15814",
+        "patch_file": "django/db/models/sql/query.py",
+        "test_file": "tests/proxy_models/tests.py"
+    },
+    {
+        "instance_id": "django__django-15851",
+        "patch_file": "django/db/backends/postgresql/client.py",
+        "test_file": "tests/dbshell/test_postgresql.py"
+    },
+    {
+        "instance_id": "django__django-16139",
+        "patch_file": "django/contrib/auth/forms.py",
+        "test_file": "tests/auth_tests/test_forms.py"
+    },
+    {
+        "instance_id": "django__django-16255",
+        "patch_file": "django/contrib/sitemaps/__init__.py",
+        "test_file": "tests/sitemaps_tests/test_http.py"
+    },
+    {
+        "instance_id": "django__django-16527",
+        "patch_file": "django/contrib/admin/templatetags/admin_modify.py",
+        "test_file": "tests/admin_views/test_templatetags.py"
+    },
+    {
+        "instance_id": "django__django-16595",
+        "patch_file": "django/db/migrations/operations/fields.py",
+        "test_file": "tests/migrations/test_optimizer.py"
+    },
+    {
+        "instance_id": "django__django-17087",
+        "patch_file": "django/db/migrations/serializer.py",
+        "test_file": "tests/migrations/test_writer.py"
+    },
+    {
+        "instance_id": "astropy__astropy-12907",
+        "patch_file": "astropy/modeling/separable.py",
+        "test_file": "astropy/modeling/tests/test_separable.py"
+    },
+    {
+        "instance_id": "astropy__astropy-14182",
+        "patch_file": "astropy/io/ascii/rst.py",
+        "test_file": "astropy/io/ascii/tests/test_rst.py"
+    },
+    {
+        "instance_id": "astropy__astropy-14365",
+        "patch_file": "astropy/io/ascii/qdp.py",
+        "test_file": "astropy/io/ascii/tests/test_qdp.py"
+    },
+    {
+        "instance_id": "astropy__astropy-14995",
+        "patch_file": "astropy/nddata/mixins/ndarithmetic.py",
+        "test_file": "astropy/nddata/mixins/tests/test_ndarithmetic.py"
+    }
+]

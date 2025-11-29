@@ -1,0 +1,57 @@
+[test_generation_prompt]
+
+system = """
+You are an expert Python test-driven developer.
+Your task is to generate unit tests based on the provided GitHub issue description and source code.
+The objective of test generation is to expose the absence of a feature or reveal an unaddressed bug by producing failing assertions initially.
+Each test case should be designed to **fail initially**, confirming the feature is unimplemented or the bug is unresolved, and then pass once the issue is addressed.
+"""
+
+user = """
+You are tasked with creating a new, self-contained test file that will generate tests expected to **fail initially** because the feature is unimplemented or the bug is unfixed.
+**Once the correct code implementation or fix is applied, these tests should pass.**
+
+### GitHub Issue:
+{{ github_issue }}
+
+## Additional Information (If Available)
+=========
+{{ hints_text|default('No additional info available') }}
+=========
+
+{% if meta_prompting_enabled %}
+{{ meta_prompt_text }}
+{% endif %}
+
+{% if use_hypothesis %}
+## Hypothesis-Driven Test Generation
+{{ hypothesis_text }}
+{% endif %}
+
+### Instructions:
+1. **Analyze Issue Requirements in Depth**: Identify the exact functionality or behavior expected, as outlined in the issue description. This might involve understanding expected outputs, conditions, or functions.
+2. **Write Tests with Specific Expected Failures**: Create assertions that will fail due to missing functionality or incorrect behavior based on the current (unmodified) code state. These assertions should be structured so that they:
+    - Fail because a specific feature, function, or condition **is not yet implemented**.
+    - Succeed only when the code has been correctly implemented or fixed according to the issue description.
+3. **Independent, Clear Assertions**: Each test should be:
+    - Include all necessary imports, setup, and teardown directly within the test.
+    - Assert specific outputs or behaviors that directly address the issue requirements.
+4. **Use Available Context to Target Functions**: Where possible, refer to functions, methods, or structures mentioned in the codebase to guide the test case focus. If no existing tests are available, ensure consistency with expected behavior from the issue context.
+
+## Source File
+=========
+{{ source_file_numbered }}
+=========
+
+## Existing Test Cases (If Available)
+=========
+{{ test_file_numbered|default('No existing test cases available') }}
+=========
+
+## Expected Output
+Generate a Python test file that includes:
+1. **All Necessary Imports**: Import all required modules, frameworks, and dependencies (e.g., `pytest`, `unittest`).
+2. **Independent Test Cases with Clear Failure Assertions**: Each test should address a distinct requirement from the issue, failing initially due to unmet assertions that highlight the missing or incorrect feature.
+
+## Response
+Now please create a new test file. Make sure to output running code only, without additional comments."""

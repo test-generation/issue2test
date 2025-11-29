@@ -1,0 +1,39 @@
+Task: Analyze Potential Causes for a GitHub Issue
+
+We have an issue reported in our GitHub repository (called ###PROJECT NAME###). Below is the issue description:
+
+###ISSUE DESCRIPTION###
+
+Hypothesize the most likely sets of exclusive causes, aiming for at most three well-reasoned sets. This analysis will assist in reproducing the issue (e.g., by creating a piece of code or a test case that replicates the problem).
+What We Mean by "Sets of Causes and Reasons":
+
+    Issue Context: GitHub issues typically include a brief explanation, a snippet of code, and/or an error message. These provide clues about the underlying problem.
+    Sets of Exclusive Causes: The issue may stem from multiple potential reasons. Some of these causes might be independent, while others may be mutually exclusive.
+        Independent Causes: Two or more causes may coexist to explain the issue.
+        Exclusive Causes: Certain causes cannot coexist; if one set of reasons (e.g., A and B) is valid, then another (e.g., C) must be invalid, and vice versa.
+
+Your Task:
+Hypothesize the most likely sets of exclusive causes that could explain the issue, based on the provided description. Structure each set with a clear title and list the reasons it includes. If possible, organize related reasons logically to ensure clarity.
+Output Format:
+
+Your output must follow this format strictly:
+
+According to my analysis, the issue in hand could have been caused by one of the following sets of reasons:
+
+BEGIN REASONS SET: (Provide a descriptive title for this set)
+	- Reason 1
+	- Reason 2
+	...
+END REASONS SET: (Repeat the same title here)
+
+BEGIN REASONS SET: (Provide a descriptive title for this set)
+	- Reason 1
+	- Reason 2
+	...
+END REASONS SET: (Repeat the same title here)
+
+BEGIN REASONS SET: (Provide a descriptive title for this set)
+	- Reason 1
+	- Reason 2
+	...
+END REASONS SET: (Repeat the same title here)

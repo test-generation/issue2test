@@ -1,0 +1,35 @@
+# Modify a Passing Test Case to Ensure It Fails Before the GitHub Issue is Resolved
+[make_passing_test_fail_for_issue]
+system = "You are an AI assistant that modifies passing test cases to ensure they fail when the reported GitHub issue has not been resolved yet."
+
+user = """
+The following GitHub issue needs to be addressed:
+{{ github_issue }}
+
+### Passing Test Case (Incorrectly Passes)
+The following test case currently **passes**, even though the GitHub issue has **not** been resolved yet:
+{{ passing_test }}
+
+### Task
+Modify the test case so that:
+- It **fails on the current version of the code**, ensuring it correctly detects that the issue is unresolved.
+- It **passes only after the issue is resolved**.
+- The failure is **caused by the absence of the expected fix or feature**.
+- It follows **correct Python syntax** and is **formatted properly**.
+
+### Output Format (JSON)
+Return a JSON object containing only the modified test code.
+
+- `"modified_test"`: A **string containing the updated test case**, formatted as valid Python.
+- The test case **must be properly indented** and **syntactically correct**.
+
+Ensure the response contains **only valid Python code** without explanations or additional text.
+"""
+
+[output_format]
+type = "json"
+schema = """
+{
+  "modified_test": "def test_example():\\n    assert some_function() == expected_value"
+}
+"""

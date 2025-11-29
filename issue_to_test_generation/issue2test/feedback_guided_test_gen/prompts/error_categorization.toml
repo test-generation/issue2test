@@ -1,0 +1,65 @@
+[error_categorization_prompt]
+system = "You are an expert in categorizing software errors in a TDD context."
+
+user_iter_2 = """
+Based on the test result below, categorize the error as either 'compilation', 'runtime', or 'assertion' based on these definitions:
+- **Compilation**: Errors preventing code from building.
+- **Runtime**: Errors occurring during execution, unrelated to assertions.
+- **Assertion**: Failed test assertions due to unmet conditions.
+
+### Test Result:
+{{ result_content }}
+
+## Response
+Respond in JSON:
+{
+  "error_type": "<compilation, runtime, or assertion>",
+  "reason": "<brief reason for categorization>"
+}
+"""
+
+user = """
+Based on the test result below, categorize the error as either 'compilation', 'runtime', or 'assertion' based on these definitions:
+- **Compilation**: Errors preventing code from building.
+- **Runtime**: Errors occurring during execution, unrelated to assertions.
+- **Assertion**: Failed test assertions due to unmet conditions.
+
+**Note**: This is a unit test. The repair steps should address how to fix the test code only, without modifying other files.
+
+Additionally, identify the root cause of the error and provide a numbered list of repair steps in a single string.
+
+## Example:
+
+### Test Result:
+Traceback (most recent call last):
+File "main.py", line 5, in <module>
+print(my_undefined_variable)
+NameError: name 'my_undefined_variable' is not defined
+
+## Response:
+{
+"error_type": "runtime",
+"reason": "A variable is used but not defined, leading to a runtime NameError.",
+"root_cause": "The variable 'my_undefined_variable' was not initialized or declared before being used.",
+"repair_steps": "1. Define the variable 'my_undefined_variable' before using it. 2. Assign it a proper value."
+}
+
+### Now handle the test result below:
+
+### Test File
+=========
+{{ test_file }}
+=========
+
+### Test Result:
+{{ result_content }}
+
+## Response
+Respond in JSON:
+{
+  "error_type": "<compilation, runtime, or assertion>",
+  "reason": "<brief reason for categorization>",
+  "root_cause": "<detailed explanation of the root cause>",
+  "repair_steps": "<numbered steps in a single string>"
+}
+"""

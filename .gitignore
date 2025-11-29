@@ -1,0 +1,51 @@
+# Compiled class file
+*.class
+.idea/
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+
+*.tar.gz
+*.rar
+__pycache__/
+*.DS_Store
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+
+.DS_Store
+.venv
+.env
+
+# dont add the workspace files
+issue_to_test_generation/lance/lance/feedback_guided_test_gen/workspace/
+issue_to_test_generation/lance/lance/workspace/
+issue_to_test_generation/lance/workspace/
+issue_to_test_generation/workspace/
+issue_to_test_generation/workspace-*/
+
+# dont add tokens
+structured_test_generator/token.txt
+
+# dont add swe-bench
+test_execution/SWE-bench/
+
+# dont add generated test backup folder to the repo
+generated-tests/backup/
+
+# dont add workspace
+issue-to-test/issue_to_test_generation/issue2test/feedback_guided_test_gen/workspace/
+feedback_guided_test_gen/workspace/
+workspace/
+

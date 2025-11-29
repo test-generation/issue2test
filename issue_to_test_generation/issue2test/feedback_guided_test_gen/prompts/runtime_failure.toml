@@ -1,0 +1,21 @@
+[runtime_failure_prompt]
+system = "You are a helpful assistant that specializes in fixing runtime errors in Python code."
+
+user = """
+You are an expert in debugging runtime errors. Here is the error message:
+{{ runtime_error_message }}
+
+Below is the numbered source code:
+{{ source_file_numbered }}
+
+And here is the test file that triggered the error:
+{{ test_file }}
+
+## Context
+{{reason}}
+
+## Response
+Please provide the corrected code to resolve this runtime error.
+Make sure your response contains only the corrected code, without additional comments.
+"""
+

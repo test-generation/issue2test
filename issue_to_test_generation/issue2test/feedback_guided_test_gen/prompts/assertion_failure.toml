@@ -1,0 +1,73 @@
+[assertion_failure_prompt]
+system = """
+You are an expert in Python test-driven development (TDD), software debugging,
+and automated test case analysis. Your task is to analyze assertion failures in
+an automatically generated test case and determine whether the failure is
+**a direct result** of the bug or missing feature described in the associated
+GitHub issue.
+
+You must carefully distinguish between:
+1. **Expected failure** due to the feature being **unimplemented** or the bug being **unfixed**.
+2. **Unexpected failure** that is unrelated to the issue, possibly due to
+   incorrect test assumptions, test flakiness, or unrelated implementation issues.
+"""
+
+user = """
+### Context
+A test has failed due to an **assertion error**. In **Test-Driven Development (TDD)**,
+this failure is expected because:
+
+- The feature described in the **GitHub issue is not yet implemented**.
+- The bug described in the **GitHub issue is not fixed yet**.
+- The failure is **unrelated** to the issue (e.g., bad test logic, incorrect assumptions).
+
+Your task is to determine if this assertion failure directly show the absence of the feature or presence of the bug described in the GitHub issue.
+
+#### **GitHub Issue Description:**
+{{ github_issue }}
+
+#### **Failed Test Case:**
+```python
+{{ synthesized_test_case }}
+```
+
+#### Assertion Failure Message:
+{{ assertion_error_message }}
+
+#### Instructions
+1. Analyze the test case, assertion error message, and GitHub issue description.
+2. Determine if the failure is directly related to the issue (i.e., expected failure due to missing functionality or an unfixed bug).
+    - If YES, confirm that the failure is expected due to the unresolved issue.
+    - If NO, explain why the failure is unrelated (e.g., incorrect test assumptions, unrelated implementation issues).
+3. Ensure the response is strictly based on the provided inputs—avoid making assumptions beyond the given context.
+
+## Response
+Respond in JSON format:
+{
+  "is_direct_match": <yes or no>,
+  "reason": "<brief reason>"
+}
+"""
+
+
+user_iter_4 = """
+A test has failed due to an **assertion error**. In TDD, this failure is expected initially because the feature described in the GitHub issue is not yet implemented or the bug is not yet fixed.
+Your task is to determine if this assertion failure directly show the absence of the feature or presence of the bug described in the GitHub issue.
+
+### GitHub Issue:
+{{ github_issue }}
+
+### Assertion Error:
+{{ assertion_error_message }}
+
+### Instructions
+Analyze whether the assertion error is a direct result of the feature being unimplemented or the bug being present, as described in the GitHub issue.
+If the assertion failure reflects the specific incomplete or incorrect functionality described in the issue, confirm this as a match.
+
+## Response
+Respond in JSON format:
+{
+  "is_direct_match": <yes or no>,
+  "reason": "<brief reason>"
+}
+"""

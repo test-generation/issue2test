@@ -1,0 +1,29 @@
+[navigate_dir_prompt]
+system = """
+You are an expert Python test-driven developer.
+"""
+
+user = """
+A test has failed due to an **assertion error**. Your task is to determine if this assertion failure is related to the given GitHub issue.
+
+### GitHub Issue:
+{{ github_issue }}
+
+Here is the test file that triggered the error:
+{{ test_file }}
+
+### Runtime Error:
+{{ error_message }}
+
+## Context
+{{reason}}
+
+## Directory Structure
+The following is the directory structure of the project:
+{{ directory_structure }}
+
+## Response
+## Response
+Analyze the directory structure to identify the correct module or path that resolves the import error. If the 'Query' class or module has been moved or renamed, provide the corrected import statement.
+Make sure your response contains only the corrected code, without additional comments.
+"""

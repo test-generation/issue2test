@@ -1,0 +1,91 @@
+[test_generation_prompt_github_issue]
+system="""\
+You are an expert Python test-driven developer.
+"""
+
+user="""\
+## Overview - Github Issue
+You are an expert software engineer code assistant tasked with generating test cases for a given GitHub issue.
+Your objective is to add new unit tests to the existing test suite.
+
+### Github Issue:
+### GitHub Problem Description ###
+Hostname and timestamp properties in generated JUnit XML reports
+Pytest enables generating JUnit XML reports of the tests.
+
+However, there are some properties missing, specifically `hostname` and `timestamp` from the `testsuite` XML element. Is there an option to include them?
+
+Example of a pytest XML report:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite errors="0" failures="2" name="check" skipped="0" tests="4" time="0.049">
+	<testcase classname="test_sample.TestClass" file="test_sample.py" line="3" name="test_addOne_normal" time="0.001"></testcase>
+	<testcase classname="test_sample.TestClass" file="test_sample.py" line="6" name="test_addOne_edge" time="0.001"></testcase>
+</testsuite>
+```
+
+Example of a junit XML report:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="location.GeoLocationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-04-22T10:32:27" hostname="Anass-MacBook-Pro.local" time="0.048">
+  <properties/>
+  <testcase name="testIoException()" classname="location.GeoLocationTest" time="0.044"/>
+  <testcase name="testJsonDeserialization()" classname="location.GeoLocationTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
+
+### Guidelines:
+1. Analyze the GitHub issue requirements.
+2. Read existing Test Cases.
+3. Ensure new tests are consistent with the existing test suite in terms of style, naming conventions, and structure. Assume new tests are part of the same suite if a test suite exists.
+
+## Source File
+Here is the source file that you will be writing tests against, called `{{ source_file_name }}`.
+We have manually added line numbers to assist in understanding the code coverage.
+These line numbers are not part of the original code.
+
+=========
+{{ source_file_numbered|trim }}
+=========
+
+## Test File
+Here is the file that contains the existing tests, called `{{ test_file_name }}`.
+=========
+{{ test_file| trim }}
+=========
+
+
+{%- if failed_tests_section|trim  %}
+
+{{ failed_tests_section|trim }}
+
+{% endif %}
+
+## Response
+The output must be in Git diff format as if the new tests were being added to the existing test file.
+
+### Example Output:
+
+diff --git a/src/test/java/com/example/MyClassTest.java b/src/test/java/com/example/MyClassTest.java
+index 1234567..89abcde 100644
+--- a/src/test/java/com/example/MyClassTest.java
++++ b/src/test/java/com/example/MyClassTest.java
+@@ -45,6 +45,15 @@ public class MyClassTest {
+     }
+
++    @Test
++    public void testSpecificScenario() {
++        // test implementation
++        assertEquals(expectedValue, actualValue);
++    }
++
++    @Test
++    public void testEdgeCase() {
++        // test implementation
++        assertThrows(ExpectedException.class, () -> {
++            myClass.methodThatThrows();
++        });
++    }
+}
+Response:"""

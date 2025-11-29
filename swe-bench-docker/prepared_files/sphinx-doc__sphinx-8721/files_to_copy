@@ -1,0 +1,3 @@
+build_files/sphinx-doc__sphinx-8721/eval.sh#/testbed/eval.sh
+build_files/sphinx-doc__sphinx-8721/patch.diff#/testbed/patch.diff
+generated-tests/iteration-3/sphinx-doc__sphinx-8721/generated_tests/test_new.py#tests/test_new.py

@@ -1,0 +1,3 @@
+build_files/astropy__astropy-14995/eval.sh#/testbed/eval.sh
+build_files/astropy__astropy-14995/patch.diff#/testbed/patch.diff
+generated-tests/iteration-3/astropy__astropy-14995/generated_tests/test_new.py#astropy/nddata/mixins/tests/test_new.py
